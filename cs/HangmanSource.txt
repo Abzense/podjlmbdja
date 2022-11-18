@@ -1,0 +1,177 @@
+using System;
+
+namespace Hangman
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            
+            bool Again = true;
+            while (Again == true)
+            {
+                string Word = "";
+                bool firstchoice = false;
+                while (firstchoice == false)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Are you with a friend? (y,n)");
+                    ConsoleKeyInfo LastKeyBegin = Console.ReadKey();
+                    string LastKeyPressed = Convert.ToString(LastKeyBegin.Key);
+                    if (LastKeyPressed == "Y")
+                    {
+                        Word = SecondP(Word);
+                        firstchoice = true;
+                    }
+                    else
+                    {
+                        if (LastKeyPressed == "N")
+                        {
+                            Word = Generator(Word);
+                            firstchoice = true;
+                        }
+                    }
+                }
+
+
+
+                bool Solved = false;
+                bool GoneThrough = false;
+                string Guesses = "";
+                int Wrongs = 0;
+                int Failrate = 10;
+                string Guess = "";
+                
+
+                while (Solved == false)
+                {
+                    Console.Clear();
+                    bool solvecheck = true;
+                    for (int dashes = 0; dashes < Word.Length; dashes++)
+                    {
+                        if (Guesses.Contains(Word.Substring(dashes, 1)))
+                        {
+                            Console.Write(Word.Substring(dashes, 1));
+                        }
+                        else
+                        {
+                            Console.Write("_ ");
+                            solvecheck = false;
+                        }
+                    }
+
+                    Console.WriteLine(" ");
+                    if (solvecheck == true)
+                    {
+                        Solved = true;
+                        continue;
+                    }
+
+                    Console.WriteLine("What is your guess? (You have " + (Failrate - Wrongs) + " guesses left)");
+                    GoneThrough = false;
+                    while (GoneThrough == false)
+                    {
+                        Guess = Convert.ToString(Console.ReadKey().Key);
+                        Guess = Guess.ToLower();
+                        if (!Guesses.Contains(Guess))
+                        {
+                            GoneThrough = true;     
+                        }
+                        else
+                        {
+                            Console.WriteLine("");
+                            Console.WriteLine("Guess Invalid");
+                        }
+                    }
+                    Guesses += Guess;
+                    if (Word.Contains(Guess))
+                    {
+                    }
+                    else
+                    {
+                        if (Wrongs == 9)
+                        {
+                            Solved = true;
+                        }
+                        else
+                        {
+                            Wrongs += 1;
+                        }
+                    }
+                }
+
+                if (Wrongs < 9)
+                {
+                    Again = Win(Again);
+                }
+                else
+                {
+                    Console.Clear();
+                    for (int losedraw = 0; losedraw < Word.Length; losedraw++)
+                    {
+                        Console.Write(Word.Substring(losedraw, 1));
+                    }
+                    Console.WriteLine(" ");
+                    Again = Lose(Again);
+                }
+            }
+            
+
+            
+        }
+
+        public static bool Win(bool Again)
+        {
+            Console.WriteLine("You Solved It! any key to play again, N to quit");
+            bool AgainWin = true;
+            string AgainResponse = Convert.ToString(Console.ReadKey().Key);
+            if (AgainResponse.Contains("N"))
+            {
+                AgainWin = false;
+            }
+                return AgainWin;
+        }
+
+        public static bool Lose(bool Again)
+        {
+            Console.WriteLine("Sorry, you ran out of guesses, any key to play again, N to quit");
+            bool AgainLose = true;
+            string AgainResponse = Convert.ToString(Console.ReadKey().Key);
+            if (AgainResponse.Contains("n"))
+            {
+                AgainLose = false;
+            }
+            return AgainLose;
+        }
+        public static string Generator(string Word)
+            {
+                string dir = AppDomain.CurrentDomain.BaseDirectory;
+                Array dictionary = System.IO.File.ReadAllLines(dir + "english3.txt");
+                Random rnd = new Random();
+                string Generate = "";
+                bool Loop = true;
+                while (Loop == true)
+                {
+                    Generate = Convert.ToString(dictionary.GetValue(Convert.ToInt32(rnd.Next(1, dictionary.Length))));
+                    if (!Generate.Contains("1234567890-_.,&/"))
+                    {
+                    break;
+                    }
+                    else
+                    {
+                    Loop = false;
+                    }
+                }
+                Generate.ToLower();
+                return Generate;
+            }
+        public static string SecondP(string Word)
+        {
+            Console.Clear();
+            Console.WriteLine("What is your word? (One word only, spaces cause problems.)");
+            string written = Console.ReadLine();
+            written = written.ToLower();
+            return written;
+        }
+    }
+}

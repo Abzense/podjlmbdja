@@ -1,0 +1,166 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Zack's Bootstrap Kinda */
+
+
+/*Background Colors*/
+
+.zw-bgBlue{
+	background-color:#000542;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.zw-bgBlack{
+	background-color:black;
+}
+
+.zw-bgWhite{
+	background-color:white;
+}
+
+
+/*Alignment*/
+
+.zw-centreVertically{
+	padding-top:50%;
+	padding-bottom:50%;
+}
+
+.zw-p5{
+	padding:5%;
+}
+
+.zw-p2{
+	padding:2%;
+}
+.zw-p1{
+	padding:1%;
+}
+
+.zw-pl15{
+	padding-left:150px;
+}
+
+.zw-textLeft{
+	text-align:left;
+}
+
+.zw-imageEmb{
+	position: relative;
+  	text-align: center;
+	color:white;
+}
+
+.zw-imageEmbTR{
+  position: absolute;
+  top: 8px;
+  right: 16px;
+	
+}
+
+.zw-imageEmbBL{
+  position: absolute;
+  bottom:80px;
+  left:16px;
+	
+}
+
+.zw-imageEmbTL{
+  position: absolute;
+  top: 8px;
+  left: 16px;
+	
+}
+
+.zw-imageEmbBR{
+  position: absolute;
+  bottom:80px;
+  right:16px;
+	
+}
+
+.zw-imageEmbTL_P{
+  position: absolute;
+  text-align:center;
+  top:15px;
+  left:360px;
+	
+}
+
+.zw-imageEmbTR_P{
+  position: absolute;
+  text-align:center;
+  top:15px;
+  right:360px;
+	
+}
+
+/* FONT */
+
+.zw-shadow{
+	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+.zw-display2{
+	font-size:46px;
+}
+
+.zw-display1{
+	font-size:56px;
+}
+
+.zw-display3{
+	font-size:36px;
+}
+
+.zw-fontUbunt{
+	font-family: 'Ubuntu', sans-serif;
+}
+@media only screen and (max-width:768px){
+	.zw-p5{
+		padding:0;
+	}
+	
+	.zw-p2{
+		padding:0;
+	}
+	
+	.zw-p1{
+		padding:0;
+	}
+	
+	.zw-pl15{
+		padding-left:0%;
+	}
+	
+	.zw-textLeft{
+		text-align:center;
+	}
+	
+	.zw-display2{
+		font-size:26px;
+	}
+	
+	.zw-display1{
+		font-size:32px;
+	}
+	
+	.zw-display3{
+		font-size:22px;
+	}
+	
+	.zw-imageEmbTL_P{
+	  position: absolute;
+	  top: 8px;
+	  left: 16px;
+
+	}
+	
+	.zw-imageEmbTR_P{
+	  position: absolute;
+	  top: 8px;
+	  right: 16px;
+
+	}
+}

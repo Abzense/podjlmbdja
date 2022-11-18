@@ -1,0 +1,150 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+    font-family:Montserrat, "Yu Gothic Medium", "Corbel Regular", Gadugi, "DejaVu Sans",  Verdana, "sans-serif";
+    text-align:center;
+    background-color:black;
+    color:white;
+}
+
+header{
+    background-image:url(../images/BackAbzen.png);
+    background-repeat:no-repeat;
+    background-size:cover;
+	background-position:center;
+	border-bottom:solid #0022EB;
+}
+
+#titleForOffset{
+    padding:5%;
+}
+
+header h1{
+    font-size:64px;
+	text-shadow:15 15 2 black;
+}
+
+h1{
+	text-shadow:15 15 2 black;
+}
+
+h2{
+    font-size:36px;
+}
+
+nav{
+    background-color:black;
+	overflow:visible;
+	position:sticky;
+	top:0;
+}
+
+nav li{
+	display:inline-flex;
+    text-align:left;
+    padding:0.5% 2%;
+}
+
+li a{
+    font-size:24px;
+    border-block-color:red;
+    color:white;
+    text-align:left;
+    text-decoration:none;
+    transition-duration:0.5s;
+}
+
+li a:hover{
+	font-size: 28px;
+	color:blue;
+    transition-duration:0.2s;
+}
+
+a:hover{
+	text-decoration:none;
+	color:white;
+}
+
+#offGuard{
+	padding:1%;
+	text-align:center;
+	margin:auto;
+	background-color:#051346;
+	transition-duration:0.5s;
+}
+
+#offGuard:hover{
+	padding:2%;
+	transition-duration:0.2s;
+}
+
+#Galv{
+	padding:1%;
+	margin:auto;
+	background-color:#000123;
+	transition-duration:0.5s;
+}
+
+#Galv:hover{
+	padding:2%;
+	transition-duration:0.2s;
+}
+
+#Nost{
+	padding:1%;
+	margin:auto;
+	background-color:#051346;
+	transition-duration:0.5s;
+}
+
+#Nost:hover{
+	padding:2%;
+	transition-duration:0.2s;
+}
+
+#Gens{
+	padding:1%;
+	margin:auto;
+	background-color:#000123;
+	transition-duration:0.5s;
+}
+
+#Gens:hover{
+	padding:2%;
+	transition-duration:0.2s;
+}
+
+#ArchiveLink button{
+	padding:2%;
+	color:#AAACFF;
+	background-color:black;
+	border:none;
+	border-radius:15px;
+	font-size:24px;
+	transition-duration:0.2s;
+}
+
+#ArchiveLink:hover button{
+	border:solid white;
+	color:white;
+	transition-duration:0.2s;
+	cursor:pointer;
+}
+
+#Yout a{
+	padding:1%;
+	color:#AAACFF;
+	transition-duration:0.5s;
+}
+
+#Yout a:hover{
+	padding:2%;
+	color:white;
+	transition-duration:0.2s;
+}
+
+#favs iframe{
+	max-width:100%;
+	height:360px;
+}
