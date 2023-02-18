@@ -65,9 +65,3 @@ function zwDecode(input, ROT, salt, bgSalt){
         output = zwROT(output, ROT % 26, false);
         return output;
 }
-
-$(document).ready(function(){
-        $("#zwEncGo").click(function(){
-                zwEncode(document.getElementById("zwEncIn").value, 0, 0, 0);
-        });
-});
