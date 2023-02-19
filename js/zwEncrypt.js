@@ -3,7 +3,7 @@
 
 console.log("Available Commands:");
 console.log("zwEncode(Input, ROT, ExtraSalt, StartingSalt) will encode messages.");
-console.log("zwDecode(Input, ROT, ExtraSalt, StartingSalt) will decode messages.")
+console.log("zwDecode(Input, ROT, ExtraSalt, StartingSalt) will decode messages.");
 console.log("zwSalt(n) will create n amount of salt.");
 console.log("zwROT(Input, n, isEncode) will ROT text by n.");
 
@@ -26,7 +26,7 @@ function zwROT(input, ROT, encode){
                 cr = input.substr(m, 1);
                 if(chrt.includes(cr)){
                         if(encode){
-                                output = output + chrt.substr(chrt.indexOf(cr) + ROT, 1)
+                                output = output + chrt.substr(chrt.indexOf(cr) + ROT, 1);
                         } else{
                                 ra = chrt.indexOf(cr, chrt.indexOf(cr) + 1);
                                 output = output + chrt.substr(ra - ROT, 1);
@@ -52,14 +52,14 @@ function zwEncode(input, ROT, salt, bgSalt){
 }
 
 function zwDecode(input, ROT, salt, bgSalt){
-        var blank = bgSalt
+        var blank = parseInt(bgSalt);
         var output = "";
         for(var a = 0; a < input.length; a += 1){
                 if(blank > 0){
                         blank -= 1;
                 } else{
                         output = output + input.substr(a, 1);
-                        blank = parseInt(input.substr(a + 1, 1)) + 1 + salt;
+                        blank = parseInt(input.substr(a + 1, 1)) + 1 + parseInt(salt);
 		    }
         }
         output = zwROT(output, ROT % 26, false);
