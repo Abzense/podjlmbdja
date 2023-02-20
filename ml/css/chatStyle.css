@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+body{
+        background-color:black;
+        color:white;
+        text-align:center;
+        font-family: 'Hubballi', sans-serif;
+}
+
+h1, h2, h3, h4{
+        font-family: 'Karantina', sans-serif;
+}
+
+.zw-img1{
+        background-image:url("../../inages/pfpicChatRoom.jpg");
+        background-size:contain;
+        background-repeat:no-repeat;
+        background-position:center;
+        height:300px;
+}
+
+.zw-img2{
+        background-image:url("../../inages/pfpicTextGen.jpg");
+        background-size:contain;
+        background-repeat:no-repeat;
+        background-position:center;
+        height:300px;
+}
+
+.zw-img3{
+        background-image:url("../../inages/pfpicComments.jpg");
+        background-size:contain;
+        background-repeat:no-repeat;
+        background-position:center;
+        height:300px;
+}
+
+.zw-img4{
+        background-image:url("../../inages/pfpicMainSite.jpg");
+        background-size:contain;
+        background-repeat:no-repeat;
+        background-position:center;
+        height:300px;
+}
+
+.zw-img5{
+        background-image:url("../../inages/pfpicAbzense.jpg");
+        background-size:contain;
+        background-repeat:no-repeat;
+        background-position:center;
+        height:300px;
+}
