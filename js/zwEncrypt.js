@@ -10,7 +10,7 @@ console.log("zwROT(Input, n, isEncode) will ROT text by n.");
 
 function zwSalt(howMuch){
         var output = "";
-        var chrt = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTYUVWXYZ1234567890()&#;:@!-_";
+        var chrt = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.&#;?!_,:-/()1234567890";
         for(let z = 0; z < howMuch; z += 1){
                 output = output + chrt.substr(Math.floor(Math.random() * (chrt.length - 1)), 1);
         }
