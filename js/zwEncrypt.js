@@ -38,6 +38,8 @@ function zwROT(input, ROT, encode){
         return output;
 }
 
+var Chart = "m,e.)(4cC:3012wqrliof89";
+
 function zwEncode(input, ROT, salt, bgSalt){
         var output = zwSalt(bgSalt);
         var newInput = zwROT(input, ROT % 26, true);
@@ -45,7 +47,7 @@ function zwEncode(input, ROT, salt, bgSalt){
         for (var z = 0; z < newInput.length; z += 1){
                 output = output + newInput.substr(z, 1);
                 how = Math.floor(Math.random() * 4) + 5;
-                output = output + how + zwSalt(how);
+                output = output + substr(Chart, how, 1) + zwSalt(how);
                 output = output + zwSalt(salt);
         }
         return output;
@@ -59,7 +61,7 @@ function zwDecode(input, ROT, salt, bgSalt){
                         blank -= 1;
                 } else{
                         output = output + input.substr(a, 1);
-                        blank = parseInt(input.substr(a + 1, 1)) + 1 + parseInt(salt);
+                        blank = Chart.indexOf(input.substr(a + 1, 1)) + 1 + parseInt(salt);
 		    }
         }
         output = zwROT(output, ROT % 26, false);
