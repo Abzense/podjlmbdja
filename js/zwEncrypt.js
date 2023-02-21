@@ -18,7 +18,7 @@ function zwSalt(howMuch){
 }
 
 function zwROT(input, ROT, encode){
-        var chrt = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        var chrt = "abcdefghijklmnopqrstuvwxyz()#,.:@!-_abcdefghijklmnopqrstuvwxyz()#,.:@!-_ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ";
         var cr = "";
         var output = "";
         var ra = "";
