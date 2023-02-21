@@ -38,7 +38,7 @@ function zwROT(input, ROT, encode){
         return output;
 }
 
-function zwEncode(input, ROT, salt, bgSalt){
+export function zwEncode(input, ROT, salt, bgSalt){
         var output = zwSalt(bgSalt);
         var newInput = zwROT(input, ROT % 26, true);
         var how = 0;
@@ -52,7 +52,7 @@ function zwEncode(input, ROT, salt, bgSalt){
         return output;
 }
 
-function zwDecode(input, ROT, salt, bgSalt){
+export function zwDecode(input, ROT, salt, bgSalt){
         var blank = parseInt(bgSalt);
         var output = "";
 	var Chart = "m,e.)(4cC:3012wqrliof89";
